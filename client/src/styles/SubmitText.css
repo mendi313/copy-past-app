@@ -1,0 +1,60 @@
+.submit-form {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+  }
+  
+  .submit-label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .submit-input,
+  .submit-textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+  }
+  
+  .submit-textarea {
+    height: 150px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  .title-popup {
+    top:50px;
+    left: 50;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1;
+  }
+  

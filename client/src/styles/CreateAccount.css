@@ -1,0 +1,40 @@
+.createAccount-container{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.form-button {
+  width: 100%;
+  margin-top: 60px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-footer {
+  position: absolute;
+  right: 30;
+  margin-top: 110px;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}

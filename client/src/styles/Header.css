@@ -1,0 +1,15 @@
+.header-container {
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+  }
+  
