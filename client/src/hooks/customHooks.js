@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 export function login(values) {
-  return axios.post('http://localhost:3000/login', {
+  return axios.post(import.meta.env.VITE_BASE_URL + 'login', {
     ...values,
   });
 }
 export function register(values) {
-  return axios.post('http://localhost:3000/register', {
+  return axios.post(import.meta.env.VITE_BASE_URL + 'register', {
     ...values,
   });
 }

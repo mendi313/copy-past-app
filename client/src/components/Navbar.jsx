@@ -8,7 +8,7 @@ import CreateAccountButton from './CreateAccountButton';
 import '../styles/Navbar.css';
 
 const BottomNav = () => {
-  const [selected, setSelected] = React.useState('login');
+  const [selected, setSelected] = React.useState('');
   const { isLogedIn } = useSelector((state) => state);
 
   const logInMessage = <IsLogIn />;

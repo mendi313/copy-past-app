@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setLogedInUser } from '../data/reducer';
 import { setLogin, login } from '../hooks/customHooks';
 import Alert from './Alert';
-import '../styles/Login.css';
+import '../styles/RegisterForm.css';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="login-container">
+      <div className="container">
         {alert && <Alert alertMsg={alertMsg} />}
         <Form form={form} name="basic" initialValues={{ remember: true }} onFinish={onFinish}>
           <Form.Item

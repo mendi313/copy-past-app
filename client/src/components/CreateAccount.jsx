@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setLogedInUser } from '../data/reducer';
 import { setLogin, register } from '../hooks/customHooks';
 import Alert from './Alert';
-import '../styles/CreateAccount.css';
+import '../styles/RegisterForm.css';
 
 const CreateAccount = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const CreateAccount = () => {
 
   return (
     <div>
-      <div className="createAccount-container">
+      <div className="container">
         {alert && <Alert alertMsg={alertMsg} />}
         <Form form={form} name="basic" initialValues={{ remember: true }} onFinish={onFinish}>
           <Form.Item
