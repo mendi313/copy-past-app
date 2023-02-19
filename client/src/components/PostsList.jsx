@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { deletePost, getPostWithParms } from '../hooks/customHooks';
 import PostItem from './PostItem';
-import axios from 'axios';
 import '../styles/PostsList.css';
 
 export default function PostsList() {
@@ -15,17 +15,12 @@ export default function PostsList() {
     setPosts((prev) => {
       return prev.filter((post) => post._id !== id);
     });
-    axios.delete(`http://localhost:3000/post/${id}`);
+    deletePost(id);
   };
 
   useEffect(() => {
     if (user)
-      axios
-        .get('http://localhost:3000/post', {
-          params: {
-            creatorId: user.uuid,
-          },
-        })
+      getPostWithParms(user.uuid)
         .then((res) => setPosts(res.data))
         .catch((err) => console.log(err));
   }, [user]);

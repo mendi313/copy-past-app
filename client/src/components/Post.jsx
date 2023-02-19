@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import PopUpQes from './PopUpQes';
-import axios from 'axios';
+import { getPost, deletePost } from '../hooks/customHooks';
 import '../styles/Post.css';
 
 function Post() {
@@ -13,8 +13,7 @@ function Post() {
   useEffect(() => {
     const lastPostId = localStorage.getItem('lastPost');
     if (!Object.keys(post).length && lastPostId) {
-      axios
-        .get(`http://localhost:3000/post/${lastPostId}`)
+      getPost(lastPostId)
         .then((res) => {
           setPost(res.data);
         })
@@ -29,9 +28,8 @@ function Post() {
 
   const deleteHandler = () => {
     setShowModal(false);
-    axios
-      .delete(`http://localhost:3000/post/${post._id}`)
-      .then((res) => {
+    deletePost(post._id)
+      .then(() => {
         navigate('/');
       })
       .catch((err) => {
@@ -53,10 +51,7 @@ function Post() {
               <Link to="/previw" state={{ post }}>
                 <button className="fullScreen-button">full screen</button>
               </Link>
-              <button
-                className="delete-button"
-                onClick={() => handlPopUp(true)}
-              >
+              <button className="delete-button" onClick={() => handlPopUp(true)}>
                 Delete
               </button>
             </div>

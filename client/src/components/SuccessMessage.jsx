@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { getPost } from '../hooks/customHooks';
 import '../styles/SuccessMessage.css';
 
 function SuccessMessage() {
@@ -9,14 +9,11 @@ function SuccessMessage() {
   const [post, setPost] = useState({});
   const [password, setPassword] = useState('');
 
-  const [inputText, setInputText] = useState(
-    `https://localHost.com/${lastPost}`
-  );
+  const [inputText, setInputText] = useState(`https://localHost:3000/post/${lastPost}`);
   useEffect(() => {
     const lastPostId = localStorage.getItem('lastPost');
     if (lastPostId) {
-      axios
-        .get(`http://localhost:3000/post/${lastPostId}`)
+      getPost(lastPostId)
         .then((res) => {
           setPost(res.data);
         })
@@ -42,11 +39,7 @@ function SuccessMessage() {
         <form className="form-container" onSubmit={handlePasswordSubmit}>
           <label>
             Password:
-            <input
-              className="password-input"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <input className="password-input" type="password" onChange={(e) => setPassword(e.target.value)} />
           </label>
           <button className="submit-button" type="submit">
             Submit
@@ -64,9 +57,7 @@ function SuccessMessage() {
               borderRadius: '5px',
             }}
           >
-            <p style={{ color: 'green', fontSize: '18px' }}>
-              Successfully pasted
-            </p>
+            <p style={{ color: 'green', fontSize: '18px' }}>Successfully pasted</p>
             <input
               type="text"
               value={inputText}
