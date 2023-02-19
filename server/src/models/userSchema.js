@@ -8,7 +8,6 @@ const usersSchema = new mongoose.Schema({
   username:String,
   password: String,
   uuid: String,
-  postsIds: [],
   created_at: { type: Date, default: Date.now },
 });
 
